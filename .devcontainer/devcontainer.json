@@ -1,12 +1,11 @@
 {
     "name": "vps_example",
-    "forwardPorts": [80, 443],
     "dockerComposeFile": [
         "../docker/docker-compose.yaml",
-        "../docker/dev/docker-compose.dev.yaml"
+        "../docker/docker-compose.dev.yaml"
     ],
-    "service": "vps_franken",
-    "workspaceFolder": "/app",
+    "service": "php",
+    "workspaceFolder": "/var/www/html",
     "customizations": {
         "vscode": {
             "settings": {

@@ -4,3 +4,8 @@
 /public/bundles/
 /var/
 /vendor/
+/.git
+/.devcontainer
+/.vscode
+/.idea
+

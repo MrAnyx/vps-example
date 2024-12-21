@@ -1,0 +1,25 @@
+services:
+    nginx:
+        image: nginx:alpine3.20
+        volumes:
+            - ..:/var/www/html
+            - ./nginx:/etc/nginx/conf.d
+        networks:
+            - internal
+        ports:
+            - "8080:80"
+        depends_on:
+            - php
+
+    php:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        networks:
+            - internal
+        volumes:
+            - ..:/var/www/html
+
+networks:
+    internal:
+        driver: bridge
