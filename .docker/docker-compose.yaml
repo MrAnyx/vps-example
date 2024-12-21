@@ -14,7 +14,7 @@ services:
     php:
         build:
             context: .
-            dockerfile: Dockerfile
+            dockerfile: php.Dockerfile
         networks:
             - internal
         volumes:
