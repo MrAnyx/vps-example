@@ -21,11 +21,11 @@ jobs:
               run: |
                   REPO_LOWER=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
                   TAG=$(echo ${{ github.ref_name }} | tr '/' '-') # Replace / with -
-                  docker build . -t ghcr.io/$REPO_LOWER/vps_example:$TAG -t ghcr.io/$REPO_LOWER/vps_example:latest
+                  docker build . -t ghcr.io/$REPO_LOWER:$TAG -t ghcr.io/$REPO_LOWER:latest
 
             - name: Push Docker image to GitHub Packages
               run: |
                   REPO_LOWER=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
                   TAG=$(echo ${{ github.ref_name }} | tr '/' '-') # Replace / with -
-                  docker push ghcr.io/$REPO_LOWER/vps_example:$TAG
-                  docker push ghcr.io/$REPO_LOWER/vps_example:latest
+                  docker push ghcr.io/$REPO_LOWER:$TAG
+                  docker push ghcr.io/$REPO_LOWER:latest

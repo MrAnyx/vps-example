@@ -1,26 +1,14 @@
 services:
-    nginx:
-        image: nginx:alpine3.20
-        volumes:
-            - ./:/var/www/html
-            - ./docker/nginx:/etc/nginx/conf.d
-        networks:
-            - internal
-        ports:
-            - "8080:80"
-        depends_on:
-            - php
-
-    php:
+    app:
         build:
             context: .
             dockerfile: Dockerfile
             target: dev
-        networks:
-            - internal
+        environment:
+            SERVER_NAME: :80
+        ports:
+            - 80:80
         volumes:
-            - ./:/var/www/html
-
-networks:
-    internal:
-        driver: bridge
+            - ./:/app
+            - caddy_data:/data
+            - caddy_config:/config
