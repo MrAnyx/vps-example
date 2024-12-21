@@ -2,8 +2,8 @@ services:
     nginx:
         image: nginx:alpine3.20
         volumes:
-            - ..:/var/www/html
-            - ./nginx:/etc/nginx/conf.d
+            - ./:/var/www/html
+            - ./docker/nginx:/etc/nginx/conf.d
         networks:
             - internal
         ports:
@@ -14,11 +14,12 @@ services:
     php:
         build:
             context: .
-            dockerfile: php.Dockerfile
+            dockerfile: Dockerfile
+            target: dev
         networks:
             - internal
         volumes:
-            - ..:/var/www/html
+            - ./:/var/www/html
 
 networks:
     internal:

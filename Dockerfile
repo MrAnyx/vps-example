@@ -14,4 +14,5 @@ RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 
 FROM base as prod
 RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
-# RUN composer install --no-dev --optimize-autoloader --no-interaction
+COPY . .
+RUN composer install --no-dev --optimize-autoloader --no-interaction
