@@ -1,6 +1,6 @@
 {
     "name": "vps_example",
-    "dockerComposeFile": ["docker-compose.yaml"],
+    "dockerComposeFile": ["../docker-compose.yaml"],
     "service": "app",
     "workspaceFolder": "/app",
     "customizations": {
