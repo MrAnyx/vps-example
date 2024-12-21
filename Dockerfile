@@ -14,4 +14,6 @@ FROM base as prod
 RUN cp $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini
 COPY . .
 EXPOSE 80
+EXPOSE 443
+EXPOSE 443/udp
 # RUN APP_ENV=prod composer install --no-dev --optimize-autoloader --no-interaction
