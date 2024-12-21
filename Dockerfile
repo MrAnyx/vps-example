@@ -13,4 +13,5 @@ RUN sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b  /usr/lo
 FROM base as prod
 RUN cp $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini
 COPY . .
+EXPOSE 80
 # RUN APP_ENV=prod composer install --no-dev --optimize-autoloader --no-interaction
