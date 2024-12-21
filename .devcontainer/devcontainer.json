@@ -1,0 +1,50 @@
+{
+    "name": "vps_example",
+    "forwardPorts": [80, 443],
+    "dockerComposeFile": [
+        "../docker/docker-compose.yaml",
+        "../docker/dev/docker-compose.dev.yaml"
+    ],
+    "service": "vps_franken",
+    "workspaceFolder": "/app",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "php.executablePath": "/usr/local/bin/php",
+                "php.validate.executablePath": "/usr/local/bin/php",
+                "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+                "php.suggest.basic": false,
+                "php-cs-fixer.allowRisky": false,
+                "[php]": {
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "junstyle.php-cs-fixer"
+                },
+                "[yaml][json][jsonc]": {
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "temphpest.useStrictTypesInNewFileStubs": true
+            },
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "MehediDracula.php-namespace-resolver",
+                "bmewburn.vscode-intelephense-client",
+                "neilbrayfield.php-docblocker",
+                "mikestead.dotenv",
+                "MehediDracula.php-namespace-resolver",
+                "mikestead.dotenv",
+                "EditorConfig.EditorConfig",
+                "junstyle.php-cs-fixer",
+                "Postman.postman-for-vscode",
+                "matthewpi.caddyfile-support",
+                "liamhammett.temphpest",
+                "ckolkman.vscode-postgres"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {
+            "version": "latest"
+        }
+    }
+}
