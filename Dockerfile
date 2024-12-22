@@ -6,6 +6,7 @@ RUN install-php-extensions intl
 RUN install-php-extensions opcache
 RUN install-php-extensions zip
 RUN install-php-extensions @composer
+ENV COMPOSER_ALLOW_SUPERUSER=1
 COPY ./.docker/apache/apache.conf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 CMD ["apache2-foreground"]
@@ -21,5 +22,5 @@ ENV APP_ENV=prod
 RUN cp $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini
 COPY . /var/www/html
 EXPOSE 80
-# RUN composer install --no-dev --optimize-autoloader --no-interaction
-# RUN php bin/console cache:clear && php bin/console cache:warmup
+RUN composer install --no-dev --optimize-autoloader --no-interaction
+RUN php bin/console cache:clear && php bin/console cache:warmup
