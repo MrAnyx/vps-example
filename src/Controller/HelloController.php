@@ -17,11 +17,11 @@ class HelloController extends AbstractController
         ]);
     }
 
-    #[Route('/hello/world', name: 'app_hello_world')]
+    #[Route('/hello/john', name: 'app_hello_world')]
     public function indexWorld(): JsonResponse
     {
         return $this->json([
-            'message' => 'Hello World',
+            'message' => 'Hello john',
             'path' => 'src/Controller/HelloController.php',
         ]);
     }
