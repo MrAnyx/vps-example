@@ -2,7 +2,7 @@
     "name": "vps_example",
     "dockerComposeFile": ["../docker-compose.yaml"],
     "service": "app",
-    "workspaceFolder": "/app",
+    "workspaceFolder": "/var/www/html",
     "customizations": {
         "vscode": {
             "settings": {

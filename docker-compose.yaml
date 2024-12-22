@@ -4,15 +4,7 @@ services:
             context: .
             dockerfile: Dockerfile
             target: dev
-        environment:
-            SERVER_NAME: localhost:80
         ports:
-            - 8080:80
+            - 80:80
         volumes:
-            - ./:/app
-            - caddy_data:/data
-            - caddy_config:/config
-
-volumes:
-    caddy_data:
-    caddy_config:
+            - ./:/var/www/html
