@@ -21,5 +21,5 @@ ENV APP_ENV=prod
 RUN cp $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini
 COPY . /var/www/html
 EXPOSE 80
-RUN composer install --no-dev --optimize-autoloader --no-interaction
-RUN php bin/console cache:clear && php bin/console cache:warmup
+# RUN composer install --no-dev --optimize-autoloader --no-interaction
+# RUN php bin/console cache:clear && php bin/console cache:warmup
